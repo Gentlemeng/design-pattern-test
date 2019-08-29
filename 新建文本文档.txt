@@ -1,0 +1,14 @@
+webpack-dev-server html-webpack-plugin
+babel-core babel-loader babel-polyfill babel-preset-es2015 babel-preset-latest  --save-dev
+.babelrc
+
+面向对象：继承 封装 多态
+ 封装：ts: public公共的 protected只能在本 private
+
+设计原则
+ 何为设计？
+  文字描述
+  unix/linux设计哲学
+ 五大设计原则
+ 从设计到模式
+ 23种  

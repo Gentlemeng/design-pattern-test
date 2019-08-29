@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue-computed实现适配器模式</title>
+</head>
+<body>
+    <div id="example">
+            <h3>{{message}}</h3>
+            <h3>{{reverseMessage}}</h3>
+    </div>
+    
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+
+    <script>
+        let vm = new Vue({
+            el:"#example",
+            data:{
+                message:"hello",
+            },
+            computed: {
+                //适配器
+                reverseMessage:function(){
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

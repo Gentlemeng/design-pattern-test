@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    </style>
+</head>
+<body>
+    <p>aaa</p>
+    <p>bbb</p>
+    <p>ccc</p>
+    <p>ddd</p>
+    <p>eee</p>
+    <p>fff</p>
+    <script src="https://cdn.bootcss.com/jquery/3.3.0/jquery.js"></script>
+    <script>
+        window.onload=function(){
+            let nodeList = document.querySelectorAll("p");
+            let arr = [1,2,3,4,5,6];
+            let $nodeList = $("p");
+
+            // ES6迭代器实现
+            function each(data){
+                let iterator = data[Symbol.iterator]();
+
+                //遍历方法一
+                // console.log(iterator.next())
+                // console.log(iterator.next())
+                // console.log(iterator.next())
+                // console.log(iterator.next())
+                // console.log(iterator.next())
+                // console.log(iterator.next())
+                // console.log(iterator.next())
+                // console.log(iterator.next())
+
+                //遍历方法二
+                // let item = {value:undefined,done:false}
+                // while(!item.done){
+                //     item = iterator.next();
+                //     if(!item.done){
+                //         console.log(item.value);
+                //     }
+                // }
+ 
+                //遍历方法三  for of
+                for(let item of data){
+                    console.log(item);
+                } 
+            }
+
+            // each(nodeList);
+            // each(arr);
+            // each($nodeList);
+            // each(new Map().set('a',100))
+            // each(new Map().set('b',200))
+
+        }
+    </script>
+</body>
+
+</html>

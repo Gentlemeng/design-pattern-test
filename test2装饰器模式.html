@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #username{
+            width:150px;
+            height:40px;
+        }
+        #usernameDialog{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+            <span id="usernamelabel">请输入5-10位字母、数字或下划线</span>
+            <input type="text" id="username" />
+            <span id="usernameDialog">请输入正确的用户名</span>
+    </div>
+    <div>
+            <span id="usernamelabel">请输入5-10位字母、数字或下划线</span>
+            <input type="text" id="username" />
+            <span id="usernameDialog">请输入正确的用户名</span>
+    </div>
+    <div>
+            <span id="usernamelabel">请输入5-10位字母、数字或下划线</span>
+            <input type="text" id="username" />
+            <span id="usernameDialog">请输入正确的用户名</span>
+    </div>
+    
+
+    <script>
+        window.onload=function(){
+            let usernameInp = document.querySelector("#username")
+            let errorText = document.querySelector("#usernameDialog")
+            let warningText = document.querySelector("#usernamelabel")
+            usernameInp.onclick=function(event){
+                    // warningText.style.display = 'none';
+                    errorText.style.display = 'inline-block';
+            }
+
+            //新需求  在用户点击输入框时，隐藏前面的提醒，显示后面的提醒
+            decorator(usernameInp,function(){
+                warningText.style.display = 'none';
+            })
+            function decorator(input,fn){
+                if(typeof(input.onclick)==='function'){
+                    let oldFn = input.onclick;
+                    input.onclick = function(){
+                        oldFn();
+                        fn()
+                    }
+                }else{
+                    input.onclick = fn
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
