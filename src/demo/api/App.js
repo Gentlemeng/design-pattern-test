@@ -1,19 +1,21 @@
 import $ from "jquery"
-import List from './../List/List'
-import ShopoingCart from './../List/List'
+import List from './../List/List.js'
+import ShopoingCart from './../ShoppingCart/ShoppingCart.js'
 export default class App{
     constructor(id){
         this.$el = $("#"+id);
     }
     init(){
-        // console.log(this.id)
+        this.initList();
+        this.initShoppingCart();
     }
     initShoppingCart(){
         let shoppingCart = new ShopoingCart(this);
-        shoppingCart.init()
+        shoppingCart.init();
     }
     initList(){
         let list = new List(this);
         list.init();
     }
-}
+} 
+
